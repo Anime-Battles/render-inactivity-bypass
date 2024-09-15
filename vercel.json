@@ -1,0 +1,7 @@
+{
+ "version":2,
+ "builds" : [
+ {"src": "bypass.py"  ,"use" : "@vercel/python"}
+ ],
+ "routes" : [{"src": "/(.*)", "dest": "bypass.py"}]
+}
