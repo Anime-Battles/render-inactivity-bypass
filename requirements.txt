@@ -1,2 +1,4 @@
 flask==3.0.3
 selenium==4.21.0
+webdriver_manager==4.0.2
+
