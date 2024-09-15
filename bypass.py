@@ -50,6 +50,7 @@ def run_flask():
 flask_thread = threading.Thread(target=run_flask)
 flask_thread.start()
 
+print("Started Selenium Part -----")
 
 try:
     options = Options()
@@ -64,8 +65,9 @@ try:
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     wait = WebDriverWait(driver,5)  # Increased timeout
-    
+    print("started the reloader -------")
     while True:
+            print("entered loop......")
             driver.get('https://ace-nudity-detector.onrender.com/')
             form = WebDriverWait(driver, 5).until( EC.presence_of_element_located((By.XPATH, '//form[@id="dataForm"]')))
             id_input = form.find_element(By.XPATH, '//input[@id="id"]')            
@@ -81,3 +83,4 @@ try:
                                                                           
 except Exception as e:
     print("e :",e) 
+    
